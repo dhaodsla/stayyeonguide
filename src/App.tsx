@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { DoorOpen, Wifi, Waves, Flame, Mic, MapPin, Phone, Dog, AlertCircle, Sun, Moon } from 'lucide-react';
+import { DoorOpen, Wifi, Waves, Flame, Mic, MapPin, Phone, Dog, AlertCircle, Sun, Moon, ShoppingBag } from 'lucide-react';
 import { AccordionItem } from './components/AccordionItem';
 import {
   CheckInOutContent,
@@ -11,6 +11,7 @@ import {
   ContactContent,
   DogContent,
   PrecautionsContent,
+  DeliveryContent,
 } from './components/SectionContents';
 
 export default function App() {
@@ -91,6 +92,12 @@ export default function App() {
       title: '숙소 이용 주의사항',
       icon: <AlertCircle size={20} strokeWidth={2.5} />,
       content: <PrecautionsContent />,
+    },
+    {
+      id: 'delivery',
+      title: '장보기 / 배달 안내',
+      icon: <ShoppingBag size={20} strokeWidth={2.5} />,
+      content: <DeliveryContent />,
     },
     {
       id: 'facilities',

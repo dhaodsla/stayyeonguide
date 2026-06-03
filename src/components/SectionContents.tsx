@@ -386,3 +386,140 @@ export function PrecautionsContent() {
     </div>
   );
 }
+
+export function DeliveryContent() {
+  return (
+    <div className="space-y-6 text-[#4a4a4a] dark:text-[#D4EADD]">
+      {/* 쿠팡 로켓프레쉬 안내 */}
+      <div className="bg-[#fcfbf9] dark:bg-[#1A2824] border border-[#f0eae0] dark:border-[#2C3F3A] p-5 rounded-xl space-y-4">
+        <div className="flex items-center gap-2">
+          <span className="text-xl">🚀</span>
+          <h4 className="text-[#1B3C35] dark:text-[#9FE2C5] font-bold text-lg">쿠팡 로켓프레쉬 이용 가능</h4>
+        </div>
+        <p className="text-sm leading-relaxed">
+          신선식품, 간식, 음료, 생필품 등을<br />
+          쿠팡 로켓프레쉬로 주문하실 수 있습니다.<br />
+          <span className="inline-block mt-1">입실 전 미리 주문하시면 더 편하게 숙소를 이용하실 수 있습니다.</span>
+        </p>
+
+        <div>
+          <p className="text-sm font-semibold text-[#8B5A2B] dark:text-[#CFA47E] mb-1 mt-3">배송지 주소</p>
+          <p className="text-sm font-medium">대구광역시 달성군 구지면 구지남로 29 스테이연</p>
+        </div>
+
+        <div className="bg-[#fff9f4] dark:bg-[#2B231D] border border-[#f2d8c9] dark:border-[#423328] p-4 rounded-xl mt-4">
+          <p className="text-sm font-bold text-[#8B5A2B] dark:text-[#CFA47E] mb-2">📦 배송 요청사항</p>
+          <p className="text-sm font-bold text-red-700 dark:text-red-400 text-lg">
+            "스테이연 노란 벤치 위에 놓아주세요."
+          </p>
+        </div>
+
+        <div className="pt-2">
+          <p className="text-sm font-semibold text-[#8B5A2B] dark:text-[#CFA47E] mb-2">⚠️ 주의사항</p>
+          <ul className="space-y-1.5 text-sm">
+            <li className="flex gap-2">
+              <span className="text-[#8B5A2B] dark:text-[#CFA47E]">•</span>
+              <span>주문 시 배송지를 스테이연 주소로 정확히 입력해주세요.</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="text-[#8B5A2B] dark:text-[#CFA47E]">•</span>
+              <span>배송 요청사항에 <strong>"스테이연 노란 벤치 위에 놓아주세요"</strong>라고 적어주세요.</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="text-[#8B5A2B] dark:text-[#CFA47E]">•</span>
+              <span>배송 시간은 쿠팡 앱에서 직접 확인해주세요.</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="text-[#8B5A2B] dark:text-[#CFA47E]">•</span>
+              <span>냉장/냉동 식품은 도착 후 빠르게 보관해주세요.</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="text-[#8B5A2B] dark:text-[#CFA47E]">•</span>
+              <span>분실 방지를 위해 도착 알림을 꼭 확인해주세요.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* 배달의민족 배달 안내 */}
+      <div className="bg-[#fcfbf9] dark:bg-[#1A2824] border border-[#f0eae0] dark:border-[#2C3F3A] p-5 rounded-xl space-y-4">
+        <div className="flex items-center gap-2">
+          <span className="text-xl">🛵</span>
+          <h4 className="text-[#1B3C35] dark:text-[#9FE2C5] font-bold text-lg">배달의민족 배달 가능</h4>
+        </div>
+        <p className="text-sm leading-relaxed">
+          스테이연 주변에는 배달의민족으로 주문 가능한 업체가 있습니다.
+        </p>
+        
+        <div>
+          <p className="text-sm font-semibold text-[#8B5A2B] dark:text-[#CFA47E] mb-1">현재 확인 가능한 배달 업체:</p>
+          <ul className="text-sm space-y-2 mb-3">
+            <li>
+              - 멕시카나치킨
+              <div className="text-[13px] text-[#1B3C35] dark:text-[#9FE2C5] font-semibold bg-[#e8efe0] dark:bg-[#20342E] px-2.5 py-1.5 rounded w-fit ml-2 mt-1 border border-[#c4dbc0] dark:border-[#2C4840]">
+                💡 전화 주문 시 "스테이연"이라고 말씀하시면 <span className="text-red-600 dark:text-red-400">배달비 무료!</span>
+              </div>
+            </li>
+            <li>- 중국집 2곳</li>
+            <li>- 국밥</li>
+            <li>- 커피</li>
+          </ul>
+          <p className="text-[13px] text-[#666666] dark:text-[#A0B0AA] bg-gray-50 dark:bg-[#111C19] p-2 rounded-lg break-keep">
+            * 배달 가능 업체와 운영 시간은 상황에 따라 달라질 수 있으니 주문 전 배달의민족 앱에서 꼭 확인해주세요.
+          </p>
+        </div>
+
+        <div>
+          <p className="text-sm font-semibold text-[#8B5A2B] dark:text-[#CFA47E] mb-1 mt-3">배달 주소</p>
+          <p className="text-sm font-medium">대구광역시 달성군 구지면 구지남로 29 스테이연</p>
+        </div>
+
+        <div className="bg-[#fff5f5] dark:bg-[#2D1D1E] border border-[#feb2b2] dark:border-[#532828] p-4 rounded-xl mt-4">
+          <p className="text-sm font-bold text-[#c53030] dark:text-[#FF8D8D] mb-2 flex items-center gap-1.5">
+            🔔 수령 안내
+          </p>
+          <p className="text-sm font-semibold text-red-700 dark:text-red-400 text-lg leading-snug">
+            도착 시 전화 받고<br />외부에서 직접 수령
+          </p>
+          <p className="text-[13px] text-[#9b2c2c] dark:text-[#FFA8A8] mt-1.5 font-medium">
+            (음식은 노란 벤치 위에 두고 가는 방식이 아닙니다.)
+          </p>
+        </div>
+
+        <div className="pt-2">
+          <p className="text-sm font-semibold text-[#8B5A2B] dark:text-[#CFA47E] mb-2">⚠️ 주의사항</p>
+          <ul className="space-y-1.5 text-sm">
+            <li className="flex gap-2">
+              <span className="text-[#8B5A2B] dark:text-[#CFA47E]">•</span>
+              <span>배달 주소는 스테이연 주소로 정확히 입력해주세요.</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="text-[#8B5A2B] dark:text-[#CFA47E]">•</span>
+              <span>배달 요청사항에는 <strong>"도착 시 전화 주세요"</strong>라고 적어주세요.</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="text-[#8B5A2B] dark:text-[#CFA47E]">•</span>
+              <span>배달기사님 연락을 받으면 외부로 나가서 <strong>직접 수령</strong>해주세요.</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="text-[#8B5A2B] dark:text-[#CFA47E]">•</span>
+              <span>음식은 노란 벤치 위에 두고 가는 방식이 아니라 직접 수령 방식으로 안내해주세요.</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="text-[#8B5A2B] dark:text-[#CFA47E]">•</span>
+              <span>배달 가능 업체와 시간은 상황에 따라 달라질 수 있습니다.</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="text-[#8B5A2B] dark:text-[#CFA47E]">•</span>
+              <span>주문 전 배달 가능 여부를 앱에서 확인해주세요.</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="text-[#8B5A2B] dark:text-[#CFA47E]">•</span>
+              <span>배달 음식 수령 후 음식물 쓰레기는 분리 정리 부탁드립니다.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
