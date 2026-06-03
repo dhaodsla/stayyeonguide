@@ -32,10 +32,16 @@ export function AccordionItem({ title, icon, content, isOpen, onToggle }: Accord
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
           >
-            <div className="px-5 pb-6 pt-2 text-[#4a4a4a] dark:text-[#D4EADD]">
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -5 }}
+              transition={{ duration: 0.3, delay: 0.05 }}
+              className="px-5 pb-6 pt-2 text-[#4a4a4a] dark:text-[#D4EADD]"
+            >
               <div className="w-full h-px bg-[#f0eae0] dark:bg-[#2C3F3A] mb-5"></div>
               {content}
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

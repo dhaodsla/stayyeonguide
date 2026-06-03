@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { DoorOpen, Wifi, Waves, Flame, Mic, MapPin, Phone, Dog, AlertCircle, Sun, Moon, ShoppingBag, Search } from 'lucide-react';
+import { DoorOpen, Wifi, Waves, Flame, Mic, MapPin, Phone, Dog, AlertCircle, Sun, Moon, ShoppingBag, Search, Compass } from 'lucide-react';
 import { AccordionItem } from './components/AccordionItem';
 import {
   CheckInOutContent,
@@ -12,6 +12,7 @@ import {
   DogContent,
   PrecautionsContent,
   DeliveryContent,
+  AttractionsContent,
 } from './components/SectionContents';
 
 export default function App() {
@@ -114,6 +115,13 @@ export default function App() {
       icon: <MapPin size={20} strokeWidth={2.5} />,
       content: <FacilitiesContent />,
       keywords: ['편의시설', '주변', '편의점', '마트', '카페', '맛집', '위치'],
+    },
+    {
+      id: 'attractions',
+      title: '주변 가볼 만한 곳',
+      icon: <Compass size={20} strokeWidth={2.5} />,
+      content: <AttractionsContent />,
+      keywords: ['관광지', '관광', '가볼만한곳', '도동서원', '송해공원', '여행', '드라이브', '카페'],
     },
     {
       id: 'contact',

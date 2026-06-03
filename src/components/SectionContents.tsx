@@ -387,6 +387,94 @@ export function PrecautionsContent() {
   );
 }
 
+export function AttractionsContent() {
+  const attractions = [
+    {
+      name: '도동서원',
+      desc: 'UNESCO 세계문화유산이자 400년 된 은행나무가 멋진 곳입니다.',
+      query: '대구 달성군 구지면 도동서원',
+    },
+    {
+      name: '국립대구과학관',
+      desc: '아이들과 함께 방문하기 좋은 체험형 실내 명소입니다.',
+      query: '국립대구과학관',
+    },
+    {
+      name: '송해공원',
+      desc: '둘레길 산책과 야경이 아름다운 달성군의 대표 명소입니다.',
+      query: '대구 송해공원',
+    },
+    {
+      name: '비슬산 자연휴양림 (대견사)',
+      desc: '전기차를 타고 올라가 멋진 풍경을 감상할 수 있습니다.',
+      query: '비슬산 자연휴양림',
+    },
+    {
+      name: '사문진 주막촌',
+      desc: '낙동강 뷰를 보며 여유를 즐길 수 있는 산책 코스입니다.',
+      query: '사문진 주막촌',
+    },
+    {
+      name: '낙동강 레포츠밸리',
+      desc: '구지면에 위치해 있으며, 강변 산책과 수상 및 육상 레저를 즐길 수 있습니다.',
+      query: '낙동강 레포츠밸리',
+    },
+    {
+      name: '현풍 백년도깨비시장',
+      desc: '가까운 현풍읍의 전통시장으로 청춘몰과 수구레 국밥이 유명합니다.',
+      query: '현풍 백년도깨비시장',
+    },
+    {
+      name: '창녕 우포늪',
+      desc: '구지면에서 차로 가까운 거리에 있는 산책과 자전거 타기 좋은 자연 생태공원입니다.',
+      query: '창녕 우포늪',
+    },
+    {
+      name: '디아크 문화관',
+      desc: '독특한 건축물과 강변 뷰, 그리고 야경이 아름다워 나들이가기 좋습니다.',
+      query: '대구 디아크',
+    },
+    {
+      name: '마비정 벽화마을',
+      desc: '정겨운 흙담과 벽화가 어우러져 레트로한 감성으로 사진 찍기 좋은 마을입니다.',
+      query: '마비정 벽화마을',
+    },
+    {
+      name: '주변 대형 카페',
+      desc: '차로 10~15분 거리(현풍 테크노폴리스)에 예쁜 대형 카페들이 많습니다.',
+      query: '현풍 테크노폴리스 카페',
+    },
+  ];
+
+  return (
+    <div className="space-y-4 text-[#4a4a4a] dark:text-[#D4EADD]">
+      <p className="leading-relaxed text-sm mb-2">
+        스테이연에서 차로 이동하기 좋은 주변 가볼 만한 곳을 추천해 드립니다.
+      </p>
+
+      <div className="grid grid-cols-1 gap-3">
+        {attractions.map((place, i) => (
+          <div key={i} className="flex flex-col p-4 bg-[#fcfbf9] dark:bg-[#1A2824] border border-[#f0eae0] dark:border-[#2C3F3A] rounded-xl space-y-2">
+            <div className="flex items-center justify-between">
+              <span className="font-bold text-[#1B3C35] dark:text-[#9FE2C5] text-base">{place.name}</span>
+              <a
+                href={`https://map.naver.com/v5/search/${encodeURIComponent(place.query)}`}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-1.5 text-[11px] px-2.5 py-1 bg-white dark:bg-[#2C3F3A] border border-[#d6cfc5] dark:border-[#3C534D] rounded-full text-[#8B5A2B] dark:text-[#CFA47E] hover:bg-[#f4f1e8] dark:hover:bg-[#1E2E2A] transition-colors shrink-0"
+              >
+                <MapPin className="w-3 h-3" />
+                위치 보기
+              </a>
+            </div>
+            <p className="text-[13px] text-[#666666] dark:text-[#A0B0AA]">{place.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function DeliveryContent() {
   return (
     <div className="space-y-6 text-[#4a4a4a] dark:text-[#D4EADD]">
