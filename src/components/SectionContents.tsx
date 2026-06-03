@@ -242,7 +242,7 @@ export function ContactContent() {
         </a>
         
         <a 
-          href="https://open.kakao.com/o/seWtrDxi"
+          href="https://open.kakao.com/o/gdDCEUxi"
           target="_blank"
           rel="noreferrer"
           className="flex items-center justify-center gap-2 w-full py-4 bg-[#FEE500] text-[#371D1E] rounded-xl shadow-md font-medium transition-transform active:scale-[0.98]"
