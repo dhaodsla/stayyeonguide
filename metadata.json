@@ -1,0 +1,6 @@
+{
+  "name": "STAY YEON GUIDE",
+  "description": "스테이연 숙소 이용 안내 디지털 가이드북",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
