@@ -448,6 +448,7 @@ export function AttractionsContent() {
 
   return (
     <div className="space-y-4 text-[#4a4a4a] dark:text-[#D4EADD]">
+      {/* 주변 가볼만한 곳 안내 */}
       <p className="leading-relaxed text-sm mb-2">
         스테이연에서 차로 이동하기 좋은 주변 가볼 만한 곳을 추천해 드립니다.
       </p>
