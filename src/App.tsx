@@ -229,7 +229,8 @@ export default function App() {
       <footer className="mt-20 py-10 text-center text-[#8B5A2B] dark:text-[#CFA47E]">
         <div className="w-12 h-1 bg-[#8B5A2B] dark:bg-[#CFA47E] opacity-20 mx-auto mb-6 rounded-full"></div>
         <p className="font-bold tracking-widest text-lg mb-2">STAY YEON</p>
-        <p className="text-sm opacity-80">편안한 하루를 보내세요.</p>
+        <p className="text-sm opacity-80 mb-6">편안한 하루를 보내세요.</p>
+        <p className="text-xs opacity-50 tracking-wider">Designed by Mason</p>
       </footer>
 
       {/* Floating Bottom Contact Button */}
