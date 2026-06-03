@@ -23,10 +23,6 @@ export function CheckInOutContent() {
           <span className="text-[#8B5A2B] mt-0.5">•</span>
           음식물 쓰레기와 일반 쓰레기는 분리하여 정리 부탁드립니다.
         </p>
-        <p className="flex gap-2">
-          <span className="text-[#8B5A2B] mt-0.5">•</span>
-          다음 손님을 위해 실내 정돈과 기본적인 뒷정리를 부탁드립니다.
-        </p>
       </div>
     </div>
   );
@@ -262,8 +258,19 @@ export function ContactContent() {
 
 export function DogContent() {
   return (
-    <div className="space-y-6 leading-relaxed text-[#4a4a4a]">
-      <p>
+    <div className="space-y-5 leading-relaxed text-[#4a4a4a]">
+      {/* 반려견 동반 동별 제한 강조 안내 박스 */}
+      <div className="bg-[#fff5f5] border border-[#feb2b2] p-4 rounded-xl space-y-1">
+        <p className="text-sm font-bold text-[#c53030] flex items-center gap-1.5">
+          ⚠️ 중요: 동별 반려견 동반 정책 안내
+        </p>
+        <p className="text-[13px] text-[#9b2c2c] leading-normal font-semibold">
+          반려견 동반은 <span className="bg-[#ffe3e3] px-1.5 py-0.5 rounded text-red-800">B동만 가능</span>합니다.<br />
+          <span className="text-red-700 bg-yellow-100 px-1.5 py-0.5 rounded border border-yellow-200 inline-block mt-1">A동 반려견 동반 시 즉시 퇴실 조치</span>되오니 꼭 준수해 주시기 바랍니다.
+        </p>
+      </div>
+
+      <p className="text-sm text-[#4a4a4a]">
         스테이연은 반려견과 함께 편안하게 머무를 수 있는 공간입니다. 다음 손님도 깨끗하게 이용하실 수 있도록 실내 배변 및 마킹 관리에 꼭 협조 부탁드립니다.
       </p>
 
@@ -272,6 +279,10 @@ export function DogContent() {
           🐾 필수 안내
         </h4>
         <ul className="space-y-2.5 text-sm">
+          <li className="flex gap-2">
+            <span className="text-[#8B5A2B] mt-0.5">•</span>
+            <span>반려견 동반은 <strong>B동만 가능</strong>하며, <strong>A동 반려견 동반 시 즉시 퇴실 조치</strong>됩니다.</span>
+          </li>
           <li className="flex gap-2">
             <span className="text-[#8B5A2B] mt-0.5">•</span>
             <span>실내 마킹이 있는 강아지는 <strong>매너벨트 필수 착용</strong>입니다.</span>
