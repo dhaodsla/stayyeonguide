@@ -408,10 +408,21 @@ export function DeliveryContent() {
         </div>
 
         <div className="bg-[#fff9f4] dark:bg-[#2B231D] border border-[#f2d8c9] dark:border-[#423328] p-4 rounded-xl mt-4">
-          <p className="text-sm font-bold text-[#8B5A2B] dark:text-[#CFA47E] mb-2">📦 배송 요청사항</p>
-          <p className="text-sm font-bold text-red-700 dark:text-red-400 text-lg">
-            "스테이연 노란 벤치 위에 놓아주세요."
-          </p>
+          <p className="text-sm font-bold text-[#8B5A2B] dark:text-[#CFA47E] mb-3">📦 배송 요청사항</p>
+          <div className="space-y-3">
+            <div>
+              <p className="text-[13px] font-semibold text-[#8B5A2B]/80 dark:text-[#CFA47E]/80 mb-1">A동 이용 고객:</p>
+              <p className="text-sm font-bold text-red-700 dark:text-red-400 text-base">
+                "A동 앞에 놓아주세요."
+              </p>
+            </div>
+            <div>
+              <p className="text-[13px] font-semibold text-[#8B5A2B]/80 dark:text-[#CFA47E]/80 mb-1">B동 이용 고객:</p>
+              <p className="text-sm font-bold text-red-700 dark:text-red-400 text-base">
+                "B동 현관 앞에 놓아주세요."
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="pt-2">
@@ -423,7 +434,7 @@ export function DeliveryContent() {
             </li>
             <li className="flex gap-2">
               <span className="text-[#8B5A2B] dark:text-[#CFA47E]">•</span>
-              <span>배송 요청사항에 <strong>"스테이연 노란 벤치 위에 놓아주세요"</strong>라고 적어주세요.</span>
+              <span>배송 요청사항에 이용하시는 동에 맞게 <strong>"A동 앞에 놓아주세요"</strong> 또는 <strong>"B동 현관 앞에 놓아주세요"</strong>라고 적어주세요.</span>
             </li>
             <li className="flex gap-2">
               <span className="text-[#8B5A2B] dark:text-[#CFA47E]">•</span>

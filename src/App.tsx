@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { DoorOpen, Wifi, Waves, Flame, Mic, MapPin, Phone, Dog, AlertCircle, Sun, Moon, ShoppingBag } from 'lucide-react';
+import { DoorOpen, Wifi, Waves, Flame, Mic, MapPin, Phone, Dog, AlertCircle, Sun, Moon, ShoppingBag, Search } from 'lucide-react';
 import { AccordionItem } from './components/AccordionItem';
 import {
   CheckInOutContent,
@@ -16,6 +16,7 @@ import {
 
 export default function App() {
   const [openSectionId, setOpenSectionId] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
   
   // Initialize dark mode based on saved preference, system preferences, or current time (night automatic support)
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
@@ -56,62 +57,81 @@ export default function App() {
       title: '입실 / 퇴실 안내',
       icon: <DoorOpen size={20} strokeWidth={2.5} />,
       content: <CheckInOutContent />,
+      keywords: ['입실', '퇴실', '체크인', '체크아웃', 'checkin', 'checkout', '시간'],
     },
     {
       id: 'wifi',
       title: '와이파이 안내',
       icon: <Wifi size={20} strokeWidth={2.5} />,
       content: <WifiContent />,
+      keywords: ['와이파이', '인터넷', 'wifi', 'internet', '비밀번호', '비번'],
     },
     {
       id: 'pool',
       title: '수영장 이용 안내',
       icon: <Waves size={20} strokeWidth={2.5} />,
       content: <PoolContent />,
+      keywords: ['수영장', '물놀이', 'pool', '수영', '수심', '온수', '튜브'],
     },
     {
       id: 'bbq',
       title: '바비큐 / 숯불 안내',
       icon: <Flame size={20} strokeWidth={2.5} />,
       content: <BBQContent />,
+      keywords: ['바비큐', '바베큐', '숯불', 'bbq', '고기', '그릴', '불멍'],
     },
     {
       id: 'karaoke',
       title: '노래방 이용 안내',
       icon: <Mic size={20} strokeWidth={2.5} />,
       content: <KaraokeContent />,
+      keywords: ['노래방', '노래', '마이크', 'karaoke', '음향', '마이크'],
     },
     {
       id: 'dog',
       title: '반려견 동반 이용 안내',
       icon: <Dog size={20} strokeWidth={2.5} />,
       content: <DogContent />,
+      keywords: ['반려견', '강아지', '애견', '개', 'dog', '동반', '펫', '배변'],
     },
     {
       id: 'precautions',
       title: '숙소 이용 주의사항',
       icon: <AlertCircle size={20} strokeWidth={2.5} />,
       content: <PrecautionsContent />,
+      keywords: ['주의사항', '주의', '금연', '규칙', 'rule', '안전', '에티켓'],
     },
     {
       id: 'delivery',
       title: '장보기 / 배달 안내',
       icon: <ShoppingBag size={20} strokeWidth={2.5} />,
       content: <DeliveryContent />,
+      keywords: ['장보기', '배달', '쿠팡', '배민', '배달의민족', '음식', '마트', '치킨'],
     },
     {
       id: 'facilities',
       title: '주변 편의시설',
       icon: <MapPin size={20} strokeWidth={2.5} />,
       content: <FacilitiesContent />,
+      keywords: ['편의시설', '주변', '편의점', '마트', '카페', '맛집', '위치'],
     },
     {
       id: 'contact',
       title: '문의하기',
       icon: <Phone size={20} strokeWidth={2.5} />,
       content: <ContactContent />,
+      keywords: ['문의', '전화', '연락', 'contact', '번호', 'a동', 'b동', '연락처'],
     },
   ];
+
+  const filteredSections = sections.filter(section => {
+    if (!searchQuery.trim()) return true;
+    const query = searchQuery.toLowerCase().trim();
+    return (
+      section.title.toLowerCase().includes(query) ||
+      section.keywords.some(keyword => keyword.toLowerCase().includes(query))
+    );
+  });
 
   const handleFloatingContactClick = () => {
     // Open the contact section and smoothly scroll to it
@@ -158,20 +178,51 @@ export default function App() {
         </div>
       </header>
 
+      {/* Search Bar */}
+      <div className="px-5 max-w-2xl mx-auto mb-8 relative z-10 transition-all duration-300">
+        <div className="relative group">
+          <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
+            <Search size={20} className="text-[#8B5A2B] dark:text-[#CFA47E] opacity-70 group-focus-within:opacity-100 transition-opacity" />
+          </div>
+          <input
+            type="text"
+            placeholder="어떤 안내가 필요하신가요? (예: 와이파이, 수영장)"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full bg-white dark:bg-[#1A2824] border border-[#edeae1] dark:border-[#2C3F3A] rounded-2xl py-4 pl-12 pr-5 text-[15px] font-medium text-[#1B3C35] dark:text-[#9FE2C5] placeholder-[#8B5A2B]/50 dark:placeholder-[#CFA47E]/50 focus:outline-none focus:ring-2 focus:ring-[#1B3C35]/20 dark:focus:ring-[#9FE2C5]/20 shadow-sm transition-all focus:shadow-md"
+          />
+          {searchQuery && (
+            <button
+              onClick={() => setSearchQuery('')}
+              className="absolute inset-y-0 right-0 pr-5 flex items-center text-sm font-medium text-[#8B5A2B] dark:text-[#CFA47E] opacity-70 hover:opacity-100 transition-opacity"
+            >
+              지우기
+            </button>
+          )}
+        </div>
+      </div>
+
       {/* Main Accordion Menu */}
       <main className="px-5 max-w-2xl mx-auto space-y-4 relative z-10">
-        {sections.map((section) => (
-          <div key={section.id} id={`${section.id}-section`}>
-            <AccordionItem
-              id={section.id}
-              title={section.title}
-              icon={section.icon}
-              content={section.content}
-              isOpen={openSectionId === section.id}
-              onToggle={() => toggleSection(section.id)}
-            />
+        {filteredSections.length > 0 ? (
+          filteredSections.map((section) => (
+            <div key={section.id} id={`${section.id}-section`}>
+              <AccordionItem
+                id={section.id}
+                title={section.title}
+                icon={section.icon}
+                content={section.content}
+                isOpen={openSectionId === section.id || (searchQuery.trim().length > 0 && filteredSections.length === 1)}
+                onToggle={() => toggleSection(section.id)}
+              />
+            </div>
+          ))
+        ) : (
+          <div className="text-center py-12 bg-white/50 dark:bg-[#1A2824]/50 rounded-2xl border border-[#edeae1] dark:border-[#2C3F3A]">
+            <p className="text-[#8B5A2B] dark:text-[#CFA47E] font-medium mb-1">검색 결과가 없습니다.</p>
+            <p className="text-[#4a4a4a] dark:text-[#D4EADD] text-sm">다른 검색어로 다시 시도해주세요.</p>
           </div>
-        ))}
+        )}
       </main>
 
       {/* Footer */}
