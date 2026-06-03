@@ -231,10 +231,17 @@ export function ContactContent() {
 
       <div className="space-y-3">
         <a 
+          href="tel:010-9850-4428"
+          className="flex items-center justify-center gap-2 w-full py-4 bg-[#1B3C35] dark:bg-[#255249] text-white rounded-xl shadow-md font-medium transition-transform active:scale-[0.98]"
+        >
+          📞 A동 전화 문의
+        </a>
+
+        <a 
           href="tel:010-4527-3377"
           className="flex items-center justify-center gap-2 w-full py-4 bg-[#1B3C35] dark:bg-[#255249] text-white rounded-xl shadow-md font-medium transition-transform active:scale-[0.98]"
         >
-          📞 전화 문의하기
+          📞 B동 전화 문의
         </a>
         
         <a 
