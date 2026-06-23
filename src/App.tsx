@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { DoorOpen, Wifi, Waves, Flame, Mic, MapPin, Phone, Dog, AlertCircle, Sun, Moon, ShoppingBag, Search, Compass } from 'lucide-react';
+import { DoorOpen, Wifi, Waves, Flame, Mic, MapPin, Phone, Dog, AlertCircle, Sun, Moon, ShoppingBag, Search, Compass, Package } from 'lucide-react';
 import { AccordionItem } from './components/AccordionItem';
 import {
   CheckInOutContent,
+  AmenitiesContent,
   WifiContent,
   PoolContent,
   BBQContent,
@@ -59,6 +60,13 @@ export default function App() {
       icon: <DoorOpen size={20} strokeWidth={2.5} />,
       content: <CheckInOutContent />,
       keywords: ['입실', '퇴실', '체크인', '체크아웃', 'checkin', 'checkout', '시간'],
+    },
+    {
+      id: 'amenities',
+      title: '구비품목 안내',
+      icon: <Package size={20} strokeWidth={2.5} />,
+      content: <AmenitiesContent />,
+      keywords: ['구비품목', '어메니티', 'amenity', '주방', '거실', '욕실', '비품', '수건', '치약'],
     },
     {
       id: 'wifi',

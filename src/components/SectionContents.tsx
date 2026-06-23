@@ -28,6 +28,44 @@ export function CheckInOutContent() {
   );
 }
 
+export function AmenitiesContent() {
+  return (
+    <div className="space-y-4 leading-relaxed text-[#4a4a4a] dark:text-[#D4EADD]">
+      <div className="space-y-3">
+        {/* 주방용품 */}
+        <div className="bg-[#fcfbf9] dark:bg-[#1A2824] p-4 rounded-xl border border-[#f0eae0] dark:border-[#2C3F3A]">
+          <h4 className="font-bold text-[#1B3C35] dark:text-[#9FE2C5] mb-2 text-[15px]">주방용품</h4>
+          <p className="text-[14px] text-[#666666] dark:text-[#A0B0AA] leading-relaxed break-keep">
+            냉장고, 전자레인지, 커피머신, 전기밥솥, 얼음정수기, 집게, 가위, 그릇, 수저, 냄비, 프라이팬, 웍, 기본 조미료(소금, 후추, 식용유)
+          </p>
+        </div>
+
+        {/* 거실용품 */}
+        <div className="bg-[#fcfbf9] dark:bg-[#1A2824] p-4 rounded-xl border border-[#f0eae0] dark:border-[#2C3F3A]">
+          <h4 className="font-bold text-[#1B3C35] dark:text-[#9FE2C5] mb-2 text-[15px]">거실용품</h4>
+          <p className="text-[14px] text-[#666666] dark:text-[#A0B0AA] leading-relaxed break-keep">
+            스마트 TV, JBL 블루투스 마이크, 선풍기, 시스템에어컨, 공기청정기, 쓰레기통, 모기향, 전기파리채, 에어건, 충전기, 배변패드, 기저귀
+          </p>
+        </div>
+
+        {/* 욕실용품 */}
+        <div className="bg-[#fcfbf9] dark:bg-[#1A2824] p-4 rounded-xl border border-[#f0eae0] dark:border-[#2C3F3A]">
+          <h4 className="font-bold text-[#1B3C35] dark:text-[#9FE2C5] mb-2 text-[15px]">욕실용품</h4>
+          <p className="text-[14px] text-[#666666] dark:text-[#A0B0AA] leading-relaxed break-keep">
+            치약, 칫솔, 휴지, 수건, 샴푸, 린스, 바디워시, 드라이기
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-4 p-3 bg-[#e8e2d4]/30 dark:bg-[#1E2E2A] rounded-lg border border-[#f0eae0] dark:border-[#3C534D]">
+        <p className="text-[14px] font-medium text-[#8B5A2B] dark:text-[#CFA47E] break-keep text-center">
+          기본 조미료 외 추가 조미료, 식재료, 개인 세면도구, 일회용품은 필요하신 만큼 준비해주세요.
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export function WifiContent() {
   return (
     <div className="space-y-5 leading-relaxed text-[#4a4a4a] dark:text-[#D4EADD]">
